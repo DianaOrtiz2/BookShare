@@ -1,0 +1,32 @@
+@model List<BookShare.Entities.Book>
+
+
+@{
+    ViewData["Title"] = "Libros";
+}
+<h2>Libros</h2>
+<a class="btn btn-primary" asp-action="BookAdd" asp-controller="Books">Agregar Libro</a>
+<div class="row">
+    @foreach (var book in Model)
+    {
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                @if (book.Image != null)
+                {
+                    <img src="data:image;base64,@Convert.ToBase64String(book.Image)" class="card-img-top" alt="Book Image">
+                }
+                else
+                {
+                    <img src="/path/to/default/image.jpg" class="card-img-top" alt="Default Image">
+                }
+                <div class="card-body">
+                    <h5 class="card-title">@book.Titulo</h5>
+                    <p class="card-text">Autor: @book.Autor</p>
+                    <p class="card-text">Descripcion: $@book.Descripcion</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
