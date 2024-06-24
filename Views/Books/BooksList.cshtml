@@ -1,19 +1,21 @@
-@model List<BookShare.Entities.Book>
+@model List<BookModel>
 
 
 @{
     ViewData["Title"] = "Libros";
 }
 <h2>Libros</h2>
-<a class="btn btn-primary" asp-action="BookAdd" asp-controller="Books">Agregar Libro</a>
+<a class="btn btn-light" asp-action="BookAdd" asp-controller="Books">Agregar Libro</a>
+
+<hr />
 <div class="row">
     @foreach (var book in Model)
     {
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
-                @if (book.Image != null)
+                @if (book.ImagePath != null)
                 {
-                    <img src="data:image;base64,@Convert.ToBase64String(book.Image)" class="card-img-top" alt="Book Image">
+                     <img src="@book.ImagePath" class="card-img-top" style="width: 100%"; />
                 }
                 else
                 {
@@ -22,11 +24,18 @@
                 <div class="card-body">
                     <h5 class="card-title">@book.Titulo</h5>
                     <p class="card-text">Autor: @book.Autor</p>
-                    <p class="card-text">Descripcion: $@book.Descripcion</p>
+                    <p class="card-text">@book.Descripcion</p>
                 </div>
+
+                <form asp-action="BookDeleted" asp-controller="Books" method="post" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este libro?');">
+                        <input type="hidden" name="id" value="@book.Id" />
+                        <button type="submit" class="btn btn-outline-warning">Eliminar</button>
+                </form>
             </div>
         </div>
     }
-</div>
+</div> 
+
+
 
 

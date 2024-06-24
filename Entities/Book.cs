@@ -13,6 +13,11 @@ namespace BookShare.Entities
         [Required]
         public string? Descripcion  {get;set;}
         [Required]
-        public byte[]? Image {get; set;}
+        public string ImagePath { get; set; }
+         [Required]
+        public string? DocumentPath { get; set; }
+
+
+         
     }
 }

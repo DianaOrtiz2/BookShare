@@ -5,13 +5,10 @@
 @Html.ValidationSummary(true)
 
 <h4>Agregar Book</h4>
-
-
-
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="BookSave" enctype="multipart/form-data">
+        <form asp-action="BookAdd" asp-controller="Books" enctype="multipart/form-data" method="post">
             <div class="form-group">
                 <label asp-for="Titulo" class="control-label"></label>
                 <input asp-for="Titulo" class="form-control" />
@@ -28,8 +25,14 @@
                 <span asp-validation-for="Descripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label for="Image" class="control-label">Imagen</label>
-                <input type="file" name="Image" class="form-control" />
+                <label asp-for="ImageFile" class="control-label">Imagen</label>
+                <input type="file" name="ImageFile" class="form-control" />
+                 <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocumentFile" class="control-label">Documento (PDF | EPUB)</label>
+                <input type="file" name="DocumentFile" class="form-control" />
+                 <span asp-validation-for="DocumentFile" class="text-danger"></span>
             </div>
             <br>
             <div class="form-group">
@@ -37,5 +40,9 @@
                 <a class="btn btn-secundary" asp-action="BooksList" asp-controller="Books">Cancelar</a>
             </div>
         </form>
+
     </div>
 </div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}
