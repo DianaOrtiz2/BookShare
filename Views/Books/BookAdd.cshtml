@@ -40,9 +40,9 @@
                 <a class="btn btn-secundary" asp-action="BooksList" asp-controller="Books">Cancelar</a>
             </div>
         </form>
+        @section Scripts {
+        <partial name="_ValidationScriptsPartial"/>
+        }
 
     </div>
 </div>
-@section Scripts {
-    <partial name="_ValidationScriptsPartial"/>
-}

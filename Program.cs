@@ -14,9 +14,22 @@ using BookShare;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using BookShare.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+var polityUserAuthentifition = new AuthorizationPolicyBuilder()
+    .RequireAuthenticatedUser()
+    .Build();
+
+
+builder.Services.AddControllersWithViews(
+    opc => opc.Filters.Add(new AuthorizeFilter(polityUserAuthentifition))
+);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -25,15 +38,15 @@ builder.Services.AddDbContext<ApplicationDbContext>(opc => opc.UseSqlServer("nam
 
 builder.Services.AddAuthentication();
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(
     opc => {opc.SignIn.RequireConfirmedAccount = false;}
 ).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
 builder.Services.PostConfigure<CookieAuthenticationOptions>(
     IdentityConstants.ApplicationScheme, opc => 
     {
-        opc.LoginPath = "User/login";
-        opc.AccessDeniedPath = "User/login";
+        opc.LoginPath = "/User/login";
+        opc.AccessDeniedPath = "/User/login";
     }
 );
 

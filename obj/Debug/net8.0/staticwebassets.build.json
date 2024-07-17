@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MWI4342KDRN7IGT2z15k1z4fGCsLyDdPhDWcScraVdc=",
+  "Hash": "uvSi7QrNZZ5kU2Ker+lk+55/Ik1Z56QVeFXW9VJgmjA=",
   "Source": "BookShare",
   "BasePath": "_content/BookShare",
   "Mode": "Default",
@@ -74,6 +74,25 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "C:\\Users\\ADSA\\Desktop\\Proyecto\\BookShare\\wwwroot\\Documentos\\danza240226541.jpeg",
+      "SourceId": "BookShare",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ADSA\\Desktop\\Proyecto\\BookShare\\wwwroot\\",
+      "BasePath": "_content/BookShare",
+      "RelativePath": "Documentos/danza240226541.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Documentos\\danza240226541.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\ADSA\\Desktop\\Proyecto\\BookShare\\wwwroot\\Documentos\\La Ciudad de Vapor - Carlos Ruiz Zafon243220181.epub",
       "SourceId": "BookShare",
       "SourceType": "Discovered",
@@ -131,6 +150,25 @@
       "OriginalItemSpec": "wwwroot\\IMG\\cumbresBorrascosas240606490.jpg"
     },
     {
+      "Identity": "C:\\Users\\ADSA\\Desktop\\Proyecto\\BookShare\\wwwroot\\IMG\\danza240226527.jpeg",
+      "SourceId": "BookShare",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ADSA\\Desktop\\Proyecto\\BookShare\\wwwroot\\",
+      "BasePath": "_content/BookShare",
+      "RelativePath": "IMG/danza240226527.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\IMG\\danza240226527.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\ADSA\\Desktop\\Proyecto\\BookShare\\wwwroot\\IMG\\Demian242702837.jpg",
       "SourceId": "BookShare",
       "SourceType": "Discovered",
@@ -167,6 +205,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\IMG\\LA CIUDAD DE VAPOR243220168.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ADSA\\Desktop\\Proyecto\\BookShare\\wwwroot\\IMG\\libros244951608.jpg",
+      "SourceId": "BookShare",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ADSA\\Desktop\\Proyecto\\BookShare\\wwwroot\\",
+      "BasePath": "_content/BookShare",
+      "RelativePath": "IMG/libros244951608.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\IMG\\libros244951608.jpg"
     },
     {
       "Identity": "C:\\Users\\ADSA\\Desktop\\Proyecto\\BookShare\\wwwroot\\IMG\\NochesBlancas245221053.jpg",

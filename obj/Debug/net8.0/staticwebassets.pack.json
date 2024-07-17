@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Documentos\\La Ciudad de Vapor - Carlos Ruiz Zafon243220181.epub"
     },
     {
+      "Id": "C:\\Users\\ADSA\\Desktop\\Proyecto\\BookShare\\wwwroot\\Documentos\\danza240226541.jpeg",
+      "PackagePath": "staticwebassets\\Documentos\\danza240226541.jpeg"
+    },
+    {
       "Id": "C:\\Users\\ADSA\\Desktop\\Proyecto\\BookShare\\wwwroot\\IMG\\Demian242702837.jpg",
       "PackagePath": "staticwebassets\\IMG\\Demian242702837.jpg"
     },
@@ -23,6 +27,14 @@
     {
       "Id": "C:\\Users\\ADSA\\Desktop\\Proyecto\\BookShare\\wwwroot\\IMG\\cumbresBorrascosas240606490.jpg",
       "PackagePath": "staticwebassets\\IMG\\cumbresBorrascosas240606490.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADSA\\Desktop\\Proyecto\\BookShare\\wwwroot\\IMG\\danza240226527.jpeg",
+      "PackagePath": "staticwebassets\\IMG\\danza240226527.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ADSA\\Desktop\\Proyecto\\BookShare\\wwwroot\\IMG\\libros244951608.jpg",
+      "PackagePath": "staticwebassets\\IMG\\libros244951608.jpg"
     },
     {
       "Id": "C:\\Users\\ADSA\\Desktop\\Proyecto\\BookShare\\wwwroot\\css\\site.css",

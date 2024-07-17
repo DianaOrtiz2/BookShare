@@ -1,0 +1,85 @@
+namespace BookShare.Controllers;
+
+public class ReviewController : Controller
+{
+    private readonly ApplicationDbContext _context;
+    private readonly ILogger<EventController> _logger;
+    private readonly IWebHostEnvironment _hostEnvironment;
+
+    public ReviewController(ApplicationDbContext context, ILogger<ReviewController> logger, IWebHostEnvironment hostEnvironment)
+    {
+        this._logger = logger;
+        _context = context;
+        _hostEnvironment = hostEnvironment;
+    }
+
+    public async Task<IActionResult> ReviewList()
+    {
+        List<ReviewModel> reviews = await _context.Review.Select(review => new ReviewModel()
+        {
+            Id = review.Id,
+            Titulo = review.Titulo,
+        }).ToListAsync();
+        return View(events);
+    }
+
+    public IActionResult ReviewAdd()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> ReviewAdd(ReviewModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            return View(model);
+        }
+        string wwwRootPath = _hostEnvironment.WebRootPath;
+        string fileName = Path.GetFileNameWithoutExtension(model.ImageFile.FileName);
+        string extension = Path.GetExtension(model.ImageFile.FileName);
+        fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+        string path = Path.Combine(wwwRootPath + "/IMG/", fileName);
+        using (var fileStream = new FileStream(path, FileMode.Create))
+        {
+                await model.ImageFile.CopyToAsync(fileStream);
+        }
+
+        var evento = new Event
+        {
+            Id = Guid.NewGuid(),
+            Titulo = model.Titulo,
+            BookId = model.BookId,
+            UserId = model.UserId,
+            review = model.review,
+            ImagePath = "/IMG/" + fileName
+        };
+
+        _context.Add(evento);
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(ReviewList));
+
+    }
+
+    public async Task<IActionResult> ReviewDetails(Guid id)
+    {
+        var review = await _context.Review
+        .Where(r => r.Id == id)
+        .Select(r => new ReviewModel{
+            Id = r.Id,
+            Titulo = r.Titulo,
+            BookId = r.BookId,
+            review = r.review,
+            UserId = r.UserId,
+            ImagePath = b.ImagePath
+        }).FirstOrDefaultAsync();
+        if (review == null)
+        {
+            return NotFound();
+        }
+
+        return View(review);
+    }
+
+}

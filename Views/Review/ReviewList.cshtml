@@ -1,0 +1,21 @@
+@model List<ReviewModel>
+@{
+    ViewData["Title"] = "Reseñas";
+}
+
+<h2>Reseñas</h2>
+<a class="btn btn-primary" asp-action="ReviewAdd">Agregar Reseña</a>
+<div class="row">
+    @foreach (var review in Model)
+    {
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@review.Titulo</h5>
+                    <p class="card-text">Reseña del libro @review.Titulo escrita por @review.UserId</p>
+                    <a href="@Url.Action("BookDetails", "Books", new { id = review.Id })" class="btn btn-primary">Leer</a>
+                </div>
+            </div>
+        </div>
+    }
+</div> 

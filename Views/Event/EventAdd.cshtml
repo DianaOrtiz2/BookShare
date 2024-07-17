@@ -1,0 +1,49 @@
+@model BookShare.Models.EventModel
+
+@{
+    ViewData["Title"] = "Agregar Evento";
+}
+@Html.ValidationSummary(true)
+
+<h4>Agregar Evento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EventAdd"  asp-controller="Event" enctype="multipart/form-data" method="post">
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <textarea asp-for="Descripcion" class="form-control"></textarea>
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" type="date" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label">Imagen</label>
+                <input type="file" name="ImageFile" class="form-control" />
+                 <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Agregar</button>
+                <a class="btn btn-secondary" asp-action="EventList" asp-controller="Event">Cancelar</a>
+            </div>
+        </form>
+
+        @section Scripts {
+        <partial name="_ValidationScriptsPartial"/>
+        }
+    </div>
+</div>

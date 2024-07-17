@@ -3,13 +3,43 @@
 @{
     ViewData["Title"] = "Registro";
 }
+
 <h1>Resitrate</h1>
 <div class="card">
     <div class="card-body">
         <form asp-action="Registro">
-            <div asp-validation>
-                
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" autocomplete="off" class="form-control" >
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label"></label>
+                <input asp-for="Password" class="form-control" >
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="FullName" class="form-label"></label>
+                <input asp-for="FullName" class="form-control" >
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input asp-for="BirthDate" class="form-control" type="date" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="gender" class="control-label"></label>
+                <select asp-for="gender" class="form-control" asp-items="Model.genderOptions"></select>
+                <span asp-validation-for="gender" class="text-danger"></span>
+            </div>
+            <button class="btn btn-primary">Registrate</button>
+
         </form>
+
+        @section Scripts {
+        <partial name="_ValidationScriptsPartial"/>
+        }
     </div>
 </div>

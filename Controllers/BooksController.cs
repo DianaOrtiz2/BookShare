@@ -39,6 +39,24 @@ public class BooksController : Controller
             return View(books);
 
     } 
+public async Task<IActionResult> BookDetails(Guid id)
+    {
+        var book = await _context.Books
+        .Where(b => b.Id == id)
+        .Select(b => new BookModel{
+            Id = b.Id,
+            Titulo = b.Titulo,
+            Autor = b.Autor,
+            Descripcion = b.Descripcion,
+            ImagePath = b.ImagePath
+        }).FirstOrDefaultAsync();
+        if (book == null)
+        {
+            return NotFound();
+        }
+
+        return View(book);
+    }
 
     [HttpGet]
 
@@ -52,7 +70,7 @@ public class BooksController : Controller
     public async Task<IActionResult> BookAdd(BookModel model)
     {
         if (ModelState.IsValid)
-        {
+        {//imagen//
             string wwwRootPath = _hostEnvironment.WebRootPath;
             string fileName = Path.GetFileNameWithoutExtension(model.ImageFile.FileName);
             string extension = Path.GetExtension(model.ImageFile.FileName);
@@ -63,7 +81,7 @@ public class BooksController : Controller
                 await model.ImageFile.CopyToAsync(fileStream);
             }
 
-            
+            //documento//
             string documentFileName = Path.GetFileNameWithoutExtension(model.DocumentFile.FileName);
             string documentExtension = Path.GetExtension(model.DocumentFile.FileName);
             documentFileName = documentFileName + DateTime.Now.ToString("yymmssfff") + documentExtension;
@@ -81,46 +99,13 @@ public class BooksController : Controller
             book.ImagePath = "/IMG/"+ fileName;
             book.DocumentPath = "/Documentos/" + documentFileName;
 
-             _context.Add(book);
+            _context.Add(book);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(BooksList));
            
 
         }  
-         return View(model);
-
-            /* string wwwRootPath = _hostEnvironment.WebRootPath;
-            string fileName = Path.GetFileNameWithoutExtension(model.ImageFile.FileName);
-            string extension = Path.GetExtension(model.ImageFile.FileName);
-            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-            string path = Path.Combine(wwwRootPath + "/IMG/", fileName);
-            using (var fileStream = new FileStream(path, FileMode.Create))
-            {
-                await model.ImageFile.CopyToAsync(fileStream);
-            }
-
-            
-            string documentFileName = Path.GetFileNameWithoutExtension(model.DocumentFile.FileName);
-            string documentExtension = Path.GetExtension(model.DocumentFile.FileName);
-            documentFileName = documentFileName + DateTime.Now.ToString("yymmssfff") + documentExtension;
-            string documentPath = Path.Combine(wwwRootPath + "/Documentos/", documentFileName);
-            using (var fileStream = new FileStream(documentPath, FileMode.Create))
-            {
-                await model.DocumentFile.CopyToAsync(fileStream);
-            }
-
-            var book = new Book();
-            book.Id = new Guid();
-            book.Titulo = model.Titulo;
-            book.Autor = model.Autor;
-            book.Descripcion = model.Descripcion;
-            book.ImagePath = "/IMG/"+ fileName;
-            book.DocumentPath = "/Documentos/" + documentFileName;
-
-             _context.Add(book);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(BooksList)); */
-        
+         return View(model);    
     }
 
     [HttpPost]

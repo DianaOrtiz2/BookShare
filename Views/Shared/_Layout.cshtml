@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BookShare.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
     <header>
@@ -35,22 +36,34 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Books" asp-action="BooksList">Libros</a>
                         </li>
-                    </ul>
-                    <div class="dropdown text-end">
-                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-                    </a>
-                    <ul class="dropdown-menu text-small">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="EventList">Eventos</a>
                         </li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Reviews" asp-action="ReviewList">Reseñas</a>
+                        </li>
                     </ul>
-                </div>
+                    
+                    if(SignInManager.IsSignedIn(User))
+                    {
+                        <div class="dropdown text-end">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Profile">Mi Perfil</a></li>
+                                <li>
+                                <form asp-area="" asp-controller="User" asp-action="Logout" method="post" class="dropdown-item">
+                                    <button type="submit" class="btn btn-link p-0">Cerrar Sesión</button>
+                                </form>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                    else {
+                        <a class="btn btn-outline-primary" asp-area="" asp-controller="User" asp-action="Login">Iniciar Sesión</a>
+                    }
+                     
                 </div>
             </div>
         </nav> 

@@ -22,15 +22,13 @@
                     <img src="/path/to/default/image.jpg" class="card-img-top" alt="Default Image">
                 }
                 <div class="card-body">
-                    <h5 class="card-title">@book.Titulo</h5>
-                    <p class="card-text">Autor: @book.Autor</p>
-                    <p class="card-text">@book.Descripcion</p>
+                    <a href="@Url.Action("BookDetails", "Books", new { id = book.Id })" class="btn btn-primary">Leer más</a>
                 </div>
 
-                <form asp-action="BookDeleted" asp-controller="Books" method="post" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este libro?');">
+                @* <form asp-action="BookDeleted" asp-controller="Books" method="post" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este libro?');">
                         <input type="hidden" name="id" value="@book.Id" />
                         <button type="submit" class="btn btn-outline-warning">Eliminar</button>
-                </form>
+                </form> *@
             </div>
         </div>
     }

@@ -1,0 +1,31 @@
+@model List<EventModel>
+
+@{
+    ViewData["Title"] = "Eventos";
+}
+<h2>Eventos</h2>
+<a class="btn btn-primary" asp-action="EventAdd" asp-controller="Event">Agregar Evento</a>
+<hr />
+<div class="row">
+    @foreach (var Event in Model)
+    {
+        <div class="col-md-4">
+            <div class="card" style="width: 15rem;">
+                @if (Event.ImagePath != null)
+                {
+                    <img src="@Event.ImagePath" class="card-img-top" style="width: 100%"; />
+                }
+                else
+                {
+                    <img src="/path/to/default/image.jpg" class="card-img-top" alt="Default Image">
+                }
+                <div class="card-body">
+                    <h5 class="card-title">@Event.Titulo</h5>
+                    <p class="card-text">Fecha: @Event.Date.ToString("dd/MM/yyyy")</p>
+                    <p class="card-text">Ubicación: @Event.Location</p>
+                    <p class="card-text">Descripción: @Event.Descripcion</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

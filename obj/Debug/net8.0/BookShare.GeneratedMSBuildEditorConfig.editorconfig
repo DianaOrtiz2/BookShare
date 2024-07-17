@@ -22,16 +22,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcQm9va0FkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ADSA/Desktop/Proyecto/BookShare/Views/Books/BookDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcQm9va0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ADSA/Desktop/Proyecto/BookShare/Views/Books/BooksList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcQm9va3NMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ADSA/Desktop/Proyecto/BookShare/Views/Eventos/EventosAdd.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRvc1xFdmVudG9zQWRkLmNzaHRtbA==
+[C:/Users/ADSA/Desktop/Proyecto/BookShare/Views/Event/EventAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRXZlbnRBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ADSA/Desktop/Proyecto/BookShare/Views/Eventos/EventosList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRvc1xFdmVudG9zTGlzdC5jc2h0bWw=
+[C:/Users/ADSA/Desktop/Proyecto/BookShare/Views/Event/EventList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRXZlbnRMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ADSA/Desktop/Proyecto/BookShare/Views/Home/Index.cshtml]
@@ -42,6 +46,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ADSA/Desktop/Proyecto/BookShare/Views/Review/ReviewAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XFJldmlld0FkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ADSA/Desktop/Proyecto/BookShare/Views/Review/ReviewList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XFJldmlld0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ADSA/Desktop/Proyecto/BookShare/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,8 +62,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ADSA/Desktop/Proyecto/BookShare/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ADSA/Desktop/Proyecto/BookShare/Views/User/Registro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Ryby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ADSA/Desktop/Proyecto/BookShare/Views/User/_layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfbGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ADSA/Desktop/Proyecto/BookShare/Views/_ViewImports.cshtml]

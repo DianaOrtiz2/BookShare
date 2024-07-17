@@ -1,0 +1,26 @@
+@model ReviewModel
+@{
+    ViewData["Title"] = "Agregar Reseña";
+}
+
+<h2>Agregar Reseña</h2>
+<form asp-action="ReviewAdd" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="BookId">Libro</label>
+        <select asp-for="BookId" asp-items="ViewBag.Books" class="form-control"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Titulo">Título</label>
+        <input asp-for="Titulo" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="review">Contenido</label>
+        <textarea asp-for="review" class="form-control" style="height: 200px;"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="ImageFile">Imagen</label>
+        <input asp-for="ImageFile" type="file" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a class="btn btn-secundary" asp-action="ReviewList" asp-controller="Review">Cancelar</a>
+</form>

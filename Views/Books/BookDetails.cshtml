@@ -1,0 +1,25 @@
+@model BookModel
+
+
+@{
+    ViewData["Title"] = Model.Titulo;
+    
+}
+
+<h2>@Model.Titulo</h2>
+<div class="row">
+    <div class="col-md-4">
+        <img src="@Model.ImagePath" class="img-fluid" alt="Portada de @Model.Titulo">
+    </div>
+    <div class="col-md-8">
+        <h3>@Model.Titulo</h3>
+        <p><strong>Autor:</strong> @Model.Autor</p>
+        <p><strong>Descripción:</strong></p>
+        <p>@Model.Descripcion</p>
+        <a href="@Url.Action("BooksList", "Books")" class="btn btn-secondary">Regrasar</a>
+        @* <form asp-action="BookDeleted" asp-controller="Books" method="post" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este libro?');">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <button type="submit" class="btn btn-outline-warning">Eliminar</button>
+        </form> *@
+    </div>
+</div>

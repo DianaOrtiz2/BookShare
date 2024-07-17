@@ -4,6 +4,7 @@ using BookShare;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookShare.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240713022517_CambiosUsuario")]
+    partial class CambiosUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -189,8 +192,8 @@ namespace BookShare.Migrations
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
-                        .HasMaxLength(21)
-                        .HasColumnType("nvarchar(21)");
+                        .HasMaxLength(13)
+                        .HasColumnType("nvarchar(13)");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -330,7 +333,7 @@ namespace BookShare.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("BookShare.Entities.ApplicationUser", b =>
+            modelBuilder.Entity("BookShare.Entities.User", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -345,7 +348,7 @@ namespace BookShare.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasDiscriminator().HasValue("ApplicationUser");
+                    b.HasDiscriminator().HasValue("User");
                 });
 
             modelBuilder.Entity("BookShare.Entities.Reviews", b =>
@@ -354,7 +357,7 @@ namespace BookShare.Migrations
                         .WithMany()
                         .HasForeignKey("BookId");
 
-                    b.HasOne("BookShare.Entities.ApplicationUser", "User")
+                    b.HasOne("BookShare.Entities.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId1");
 
